@@ -1,0 +1,83 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "grid_settings";
+@import url("https://fnt.webink.com/wfs/webink.css/?project=04C74B7D-2D93-4F81-A763-870488A434BD&fonts=37437296-19E9-5916-9448-2D4ADE086DC5:f=AdelleWeb-Regular,35A1FBC1-3258-7D02-4478-96C95577991A:f=AdelleWeb-Light");
+
+
+* {
+    font-family: "AdelleWeb-Regular";
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-color: rgba(176, 170, 109, 0.3);
+    height: 250px;
+    #title {
+        color: #A19A57;
+        @include outer-container;
+        padding-top: 2.5em;
+        text-align: center;
+        #name {
+            font-family: "AdelleWeb-Light";
+            font-size: 6em;
+            line-height: 0.82em;
+            @include media($mobile) {
+                font-size: 4em;
+            }
+        }
+        #subtitle1 {
+            font-size: 2.05em;
+            letter-spacing: 1px;
+        }
+        #subtitle2 {
+            font-size: 2.6em;
+            letter-spacing: .9px;
+            line-height: 1em;
+        }
+    }
+}
+
+#content {
+    @include outer-container;
+    clear: both;
+    padding-left: 100px;
+    @include media($mobile) {
+        padding-left: 0px;
+    }
+    @include media(tablet) {
+        padding-left: 0px;
+    }
+}
+
+.block-column {
+    @include span-columns(4 of 12);
+    padding-left: 25px;
+    .block-detail {
+        @include fill-parent;
+        .detail-line-item {
+            @include fill-parent;
+            .line-item-icon {
+                width: 1em;
+                @include span-columns(.5 of 4, inline-block);
+            }
+            .line-item-text {
+                @include span-columns(3.5 of 4, inline-block);
+            }
+        }
+    }
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+footer {
+    @include outer-container;
+}
